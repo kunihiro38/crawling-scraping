@@ -10,6 +10,7 @@ requests = "*"
 lxml = "*"
 cssselect = "*"
 beautifulsoup4 = "*"
+pyquery = "*"
 
 [requires]
 python_version = "3.8"
