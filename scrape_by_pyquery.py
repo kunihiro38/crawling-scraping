@@ -1,3 +1,4 @@
+'''scrape_by_pyquery'''
 from pyquery import PyQuery as pq
 
 # HTMLファイルを読み込んでPyQueryオブジェクトを得る。
