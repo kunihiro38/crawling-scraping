@@ -12,6 +12,7 @@ cssselect = "*"
 beautifulsoup4 = "*"
 pyquery = "*"
 feedparser = "*"
+mysqlclient = "*"
 
 [requires]
 python_version = "3.8"
