@@ -13,6 +13,12 @@ beautifulsoup4 = "*"
 pyquery = "*"
 feedparser = "*"
 mysqlclient = "*"
+tenacity = "*"
+cachecontrol = {extras = ["filecache"], version = "*"}
+jsonschema = "*"
+mecab-python3 = "*"
+mecab = "*"
+unidic-lite = "*"
 
 [requires]
 python_version = "3.8"
