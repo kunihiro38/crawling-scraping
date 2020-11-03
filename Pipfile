@@ -6,7 +6,6 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
-requests = "*"
 lxml = "*"
 cssselect = "*"
 beautifulsoup4 = "*"
@@ -19,6 +18,8 @@ jsonschema = "*"
 mecab-python3 = "*"
 mecab = "*"
 unidic-lite = "*"
+tweepy = "*"
+requests-oauthlib = "*"
 
 [requires]
 python_version = "3.8"
