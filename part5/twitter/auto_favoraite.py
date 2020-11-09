@@ -9,10 +9,10 @@ def remove_emoji(src_str):
 
 
 # 取得した各種キーを格納-----------------------------------------------------
-CONSUMER_KEY = "ADszgSxou1TsAD076fuslsLEG"
-CONSUMER_SECRET = "RN3yhLzJHOnqPUfURXEFCQxU9D8teaWLMVMwZqL7JjD6bxTii6"
-ACCESS_TOKEN = "953993444099219456-WaIffLmlu3LfHxVMiDQhG7h8XCXIOHv"
-ACCESS_TOKEN_SECRET = "FksrWC9znitAMnOHrKGy0hZ9Rcw2xAvAhod3SG1iPtvXs"
+CONSUMER_KEY = ""
+CONSUMER_SECRET = ""
+ACCESS_TOKEN = ""
+ACCESS_TOKEN_SECRET = ""
 
 auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
 auth.set_access_token(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
