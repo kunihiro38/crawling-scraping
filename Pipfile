@@ -22,6 +22,10 @@ tweepy = "*"
 requests-oauthlib = "*"
 pylint = "*"
 emoji = "*"
+numpy = "*"
+matplotlib = "*"
+pillow = "*"
+wordcloud = "*"
 
 [requires]
 python_version = "3.8"
