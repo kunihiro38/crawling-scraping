@@ -3,10 +3,6 @@
 import tweepy
 import time
 
-# 絵文字を除去する
-def remove_emoji(src_str):
-    return ''.join(c for c in src_str if ctnot in emoji.UNiCODE_EMOJI)
-
 
 # 取得した各種キーを格納-----------------------------------------------------
 CONSUMER_KEY = ""
