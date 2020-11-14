@@ -1,9 +1,8 @@
-# 参考 http://docs.tweepy.org/en/latest/
+# tweepyの参考 http://docs.tweepy.org/en/latest/
 # 参考 https://qiita.com/sugarcoder18/items/e66f6043fc17528f81ab
 
 import sys
 import tweepy
-import time
 import MeCab
 import numpy
 import matplotlib.pyplot as plt
@@ -43,21 +42,22 @@ for tweet in tweets:
 # \n改行除去 \t空白除去
 j = " ".join([i.split("\t")[0] for i in text.split("\n")])
 # print(j)
+
 # 含めたくないワードを追加
-add_STOPWORDS = ["この","たち","総理","まし","です","ます","から","いる","ない","する","ある","なる","れる","できる","これ","こと","さん","られる","やる","てる","ませ","その"] #表示させないキーワードを追加する
+# add_STOPWORDS = ["この","たち","総理","まし","です","ます","から","いる","ない","する","ある","なる","れる","できる","これ","こと","さん","られる","やる","てる","ませ","その"] #表示させないキーワードを追加する
+add_STOPWORDS = ["Hiroyan", "https"] #表示させないキーワードを追加する
 for word in add_STOPWORDS:
     STOPWORDS.add(word)
 
-str(STOPWORDS)
-st_text = text.encode("utf-8")
-
+# 形態素解析
 # Taggerというクラスのインスタンスを生成し、parseというメソッドを呼ぶことで解析結果が文字列として取得できる。
-
 tagger = MeCab.Tagger()
 tagger.parse('')
 node = tagger.parseToNode(j)
 
 
+# 画像作成
+# nodeを順番に読み取り品詞が名詞、且つ含めたくないワードを除外
 word_list = []
 while node:
     word_type = node.feature.split(',')[0]
@@ -65,19 +65,23 @@ while node:
     if word_type == '名詞' and word_surf not in add_STOPWORDS:
         word_list.append(node.surface)
     node = node.next
-    
+
 word_chain = ' '.join(word_list)
 word_cloud = WordCloud(
-    width=480,
-    height=320,
-    background_color = "white",
+    width=640,
+    height=360,
+    # background_color = "white",
     max_words = 2000,
     font_path = "/Library/Fonts//ヒラギノ丸ゴ ProN W4.ttc" 
 )
 word_cloud.generate(word_chain)
 word_cloud.to_file('sample.jpg')
-file = open('sample.jpg')
 
+
+img = Image.open('sample.jpg')
+# 画像を開く
+img.show()
 
 
 # フォントパスはインストールしていない。最初からあるやつ。
+# キータの奴を参考にして作成していく
