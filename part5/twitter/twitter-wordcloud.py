@@ -1,6 +1,7 @@
 # tweepyの参考 http://docs.tweepy.org/en/latest/
 # 参考 https://qiita.com/sugarcoder18/items/e66f6043fc17528f81ab
 
+import os
 import sys
 import tweepy
 import MeCab
@@ -9,11 +10,14 @@ import matplotlib.pyplot as plt
 from PIL import Image
 from wordcloud import WordCloud, STOPWORDS # 単語の頻出頻度の可視化
 
+from dotenv import load_dotenv
+load_dotenv()
+
 # 取得した各種キーを格納-----------------------------------------------------
-CONSUMER_KEY = ""
-CONSUMER_SECRET = ""
-ACCESS_TOKEN = ""
-ACCESS_TOKEN_SECRET = ""
+CONSUMER_KEY = os.environ['CONSUMER_KEY']
+CONSUMER_SECRET = os.environ['CONSUMER_SECRET']
+ACCESS_TOKEN = os.environ['ACCESS_TOKEN']
+ACCESS_TOKEN_SECRET = os.environ['ACCESS_TOKEN_SECRET']
 
 auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
 auth.set_access_token(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
