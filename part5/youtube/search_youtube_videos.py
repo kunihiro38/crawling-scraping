@@ -9,7 +9,8 @@ load_dotenv()
 YOUTUBE_API_KEY = os.environ['YOUTBUE_API_KEY']
 
 
-# YouTubeのAPIクライアントを組み立てる。build()関数の第一引数にはAPI名を、
+# YouTubeのAPIクライアントを組み立てる。
+# build()関数の第一引数にはAPI名
 # 第二引数にはAPIのバージョンを指定し、キーワード引数developerKyeでAPIキーを指定する。
 
 youtube = build('youtube', 'v3', developerKey=YOUTUBE_API_KEY)
