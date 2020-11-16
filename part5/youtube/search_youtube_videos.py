@@ -21,7 +21,10 @@ youtube = build('youtube', 'v3', developerKey=YOUTUBE_API_KEY)
 
 search_response = youtube.search().list(
     part='snippet',
-    q='手芸',
+    # 検索したい文字列を指定
+    q='テキサスホールデム',
+    # 視聴回数が多い順に取得
+    order='viewCount',
     type='video',
 ).execute()
 
