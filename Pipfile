@@ -1,33 +1,18 @@
 [[source]]
-name = "pypi"
 url = "https://pypi.org/simple"
 verify_ssl = true
-
-[dev-packages]
+name = "pypi"
 
 [packages]
-lxml = "*"
-cssselect = "*"
-beautifulsoup4 = "*"
-pyquery = "*"
-feedparser = "*"
-mysqlclient = "*"
-tenacity = "*"
-cachecontrol = {extras = ["filecache"], version = "*"}
-jsonschema = "*"
-mecab-python3 = "*"
-mecab = "*"
-unidic-lite = "*"
-tweepy = "*"
-requests-oauthlib = "*"
+pandas = "*"
 pylint = "*"
-emoji = "*"
 numpy = "*"
-matplotlib = "*"
-pillow = "*"
-wordcloud = "*"
-google-api-python-client = "*"
+tweepy = "*"
 python-dotenv = "*"
+selenium = "*"
+chromedriver-binary = "*"
+
+[dev-packages]
 
 [requires]
 python_version = "3.8"

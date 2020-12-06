@@ -21,6 +21,7 @@ api = tweepy.API(auth)
 # 取得したいキーワード
 search_list = ['#駆け出しエンジニア', '#python']
 search_list = ['#今日の積み上げ', '#駆け出しエンジニア']
+# search_list = ['会社辞めたい', '駆け出しエンジニア', '転職']
 
 # ツイート件数を入れた数だけいいねする
 # ちなみにいいねは24時間で1000件が上限で、それを超えるとペナルティ(アカウント停止)を受ける
@@ -34,7 +35,7 @@ for search in search_list:
         try:
             api.create_favorite(id=tweet_id)
             print('いいね!!をしました')
-            time.sleep(5)
+            time.sleep(5) 
         except tweepy.TweepError as e:
             print(e.reason)
         except StopIteration:
