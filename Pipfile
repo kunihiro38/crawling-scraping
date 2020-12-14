@@ -12,6 +12,7 @@ python-dotenv = "*"
 selenium = "*"
 chromedriver-binary = "*"
 requests-html = "*"
+mysqlclient = "*"
 
 [dev-packages]
 
