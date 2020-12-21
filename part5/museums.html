@@ -1,3 +1,7 @@
+<!-- 実行時はこのコマンド実行
+% python -m http.server
+またブラウザでhttp://localhost:8000/museums.html　を開く -->
+
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -8,7 +12,6 @@
     </style>
 </head>
 <body>
-    <p>テスト</p>
     <div id="map"></div>
     <script>
         function initMap(){
@@ -18,10 +21,9 @@
                 zoom: 7
             });
             // InfoWindowオブジェクトを作成しておく.
-            var infowindow = new google.maps.infowindow();
+            var infowindow = new google.maps.InfoWindow();
             // geojsonファイルの相対URLを指定して読み込み、地図に表示する。
-            map.data.loadGelJson('./museums.geojson');
-
+            map.data.loadGeoJson('./museums.geojson');
             // マーカーをクリックした時に実行するイベントリスナーを登録する。
             map.data.addListener('click', function(e){
                 // h2要素を作成し、美術館の名前(label)を追加する
@@ -32,7 +34,7 @@
                 div.appendChild(h2);
                 div.appendChild(document.createTextNode('住所: ' + e.feature.getProperty('address')));
 
-                // InfoWindowに表示する中身としてdiv要素を指定する。
+                // InfoWindrowに表示する中身としてdiv要素を指定する。
                 infowindow.setContent(div);
                 // 表示場所としてマーカーの地点を指定する。
                 infowindow.setPosition(e.feature.getGeometry().get());
@@ -43,6 +45,7 @@
             });
         }
     </script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=385759056644-7jghge59gpth3c07acs5r5fspmcbq4v7.apps.googleusercontent.com&callback=initMap"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=<APIキー>&callback=initMap" async defer></script>
+
 </body>
 </html>
