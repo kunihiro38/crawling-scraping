@@ -6,7 +6,6 @@ import time
 from dotenv import load_dotenv
 load_dotenv()
 
-
 # 取得した各種キーを格納-----------------------------------------------------
 CONSUMER_KEY = os.environ['CONSUMER_KEY']
 CONSUMER_SECRET = os.environ['CONSUMER_SECRET']
